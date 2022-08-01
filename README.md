@@ -1,1 +1,1 @@
-6. Creating the .Net API Project using the dotnet CLI
+7. Setting up VS code to work with C#
