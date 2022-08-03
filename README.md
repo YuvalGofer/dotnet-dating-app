@@ -1,9 +1,6 @@
-20.Creating the angular application
+21.Adding VS extension
 
-- make sure you have nodejs and npm
-- `node --vertion` and `npm --vertion` to make sure the versions are fine
-- install angular cli globally: `npm install -g @angular/cli`
-- create new app(lowercase name) inside DatingApp folder `ng new client`
-
-* use routing
-* use css
+extensions for vscode:
+Angular Language Service
+Angular Snippets by John Papa
+Bracket Pair Colorizer 2
