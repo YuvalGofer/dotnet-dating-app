@@ -1,37 +1,17 @@
-22.Runing the angular project and reviewing the bootstrap of the app
+23. Making http request in angular
+    so we are going to fetch data from our api
 
-- inside 'client' folder, running `ng serve` to run the project
-- this wil start out angular dev server, compile out ts file to js and serve them from memory.
-- when done the server will have an endpoint on port 4200 and we can see the js files that ware created
+- add module => go to app.module.ts
+- angular uses DI the way .net core uses it.
+- go to app.component.ts
 
-- lets go to the browser to see what we have there
-- lets see what is responsible for displaying that thing in our page:
+- after running check out the browser to see result
+- no data (it's ok, we didn't interpolate 'users')
+- we DO have errors:
+- we do go to the error part with the printing of the error response
+- but WTF is CORS?
+  - the server tells the browser that it accepts requests only from same origin (url+port)
+  - the browser is the one enforces the policy
+  - https://www.youtube.com/watch?v=4KHiSt0oLJ0
 
-  - starting from index.html (can change the <title></title>)
-  - what is app-root?
-  - no js in sight but in devtools we have the js files
-  - what is happening in the background?
-  - these files are injected into our page, how? angular uses webpack, don't worry about it for now
-  - so what bootstrapping our app?
-  - the app.component has app-root inside a Decorator (a configuration for classes to have superpowers) named @Component
-  - angular uses components - building blocks for building ui
-  - component structure
-  - delete the content from app.component.html
-  - go to app.component.html
-  - go to app.component.ts
-  - so how AppComponent getting bootstrapped?
-  - every app have to have at leased 1 angular module (not ES module), our AppModule declares our components (using an array)
-  - our module can import other modules to use.
-  - and it bootstrap our component using another bootstrap configuration
-  - how what bootstrap the bootstrapper 😉?
-  - this is the main.ts and this is one of the files webpack is providing us with in index.html
-  - we wont go too deep, it's boring
-  - but because we using ts we have tsconfig.json to give ts it's configuration.
-  - one this there, experimentalDecorators => that's how we can use decorators.
-  - one other thing, target => the code will be compiled to ES2015,
-
-    - if an older browser will try to access our aoo angular will see that and give the browser an older version
-
-  - angular.json is kind of configuration for the our angular app and webpack (this is where we can add some scripts and styles)
-
-next up: some extensions for using angular efficiently with vscode
+next up: adding cors to our API
