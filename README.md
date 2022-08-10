@@ -1,14 +1,9 @@
-so we want to create a controller for login/register
-looking @ our UsersController we see that:
+create an AccountController (go to file)
 
-1. all controller wil have [ApiController] and [Route] annotations
-2. ControllerBase inheritance
+- test it using postman: section 4 (register user) ** pay attention to the differences (via query params/post body) **
 
-so for the sake of DRY we'll create BaseApiController.cs (go to file)
-and use it to derive from our UserController
+- when testing the post with body data, we get 500 error (if you get 404 restart dotnet)... interesting...
+- when testing the post with query params, we success
 
-make sure all is fine using postman
-_ can start using postman collections:
-_ import => select from StudentAssets the postman collection
-
-next up: create account controller for register/login
+so.. why this is happening?
+next up: well use the debugger to understand.
