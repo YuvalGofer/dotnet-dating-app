@@ -1,4 +1,4 @@
-28. Using HTTPS in angular - WINDOWS
+28. Extension
     self signed certificate is a mess...
     what are certificates in the first place?
     I'll provide a certificate, how to make the browser to trust it?
