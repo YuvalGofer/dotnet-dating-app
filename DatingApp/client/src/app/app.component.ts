@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //Change detaction in angular is done by the angular framework
+  // it check if the data 
   title = 'The dating app';
   users: any;
   constructor(private http: HttpClient) {
@@ -27,7 +29,9 @@ export class AppComponent {
       //   console.log('Finished')
       // }
       {
-        next: (Response) => { this.users = Response; },//What to do with return data
+        next: (Response) => {
+          this.users = Response; console.log(Response);
+        },//What to do with return data
         error: (error) => { console.log(error); },//What to do with error
         complete: () => { console.log("Finished"); }//What to do when finished
       }
