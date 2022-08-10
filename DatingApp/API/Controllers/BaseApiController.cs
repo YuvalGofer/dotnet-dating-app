@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace API.Controllers
+{
+    public class BaseApiController
+    {
+        [ApiController]
+        [Route("api/[controller]")]
+        public class BaseApiController : ControllerBase
+        {
+
+        }
+    }
+}
