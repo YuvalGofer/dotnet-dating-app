@@ -62,7 +62,7 @@ namespace API
 
             app.UseCors(policy => policy.AllowAnyHeader()//allow any header(like authentication related headers)
             .AllowAnyMethod()//allow any method(like: GET, POST, PUT, DELETE)
-            .WithOrigins("http://localhost:4200")//our frontend url
+            .WithOrigins("https://localhost:4200")//our frontend url
             );
 
             app.UseAuthorization();
