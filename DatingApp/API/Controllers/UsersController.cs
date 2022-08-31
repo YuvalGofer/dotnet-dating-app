@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,8 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")] // api/users
+
     public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
@@ -18,13 +16,15 @@ namespace API.Controllers
         {
             _context = context;
         }
-        [HttpGet]
+
+        [HttpGet] // api/users
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
-            var uesers = await _context.Users.ToListAsync();
-            return uesers;
+           var users = await _context.Users.ToListAsync();
+           return users;
         }
-        [HttpGet("{id}")]
+
+        [HttpGet("{id}")] // api/users/1
         public async Task<ActionResult<AppUser>> GetUser(int id)
         {
             var user = await _context.Users.FindAsync(id);

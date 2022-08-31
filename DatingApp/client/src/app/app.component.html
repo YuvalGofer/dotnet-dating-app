@@ -1,4 +1,7 @@
-<h1>{{ title }} <i class="fa fa-free-code-camp" aria-hidden="true"></i></h1>
+<h1>{{title}} <i class="fa fa-free-code-camp blue"></i></h1>
+
 <ul>
-  <li *ngFor="let user of users">{{ user.id }} - {{ user.username }}</li>
+  <li *ngFor="let user of users">
+    {{user.id}} - {{user.userName}}
+  </li>
 </ul>
