@@ -7,7 +7,7 @@ import { AccountService } from 'app/services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  loggedIn: boolean=false;
+  loggedIn: boolean = false;
   // using 2 way binding (update the view <=>component)
   model: any = {};
 
@@ -16,12 +16,19 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
   login() {
-    this.accountService.login(this.model).subscribe(response => {
-      console.log(response);
-      this.loggedIn=true;
-    }, error => {
-      console.log(error);
-    })
+    this.accountService.login(this.model)
+      .subscribe({
+        next: response => {
+          console.log(response);
+          this.loggedIn = true;
+        },
+        error: error => {
+          console.log(error);
+        }
+      });
+  }
+  logout(){
+    this.loggedIn = false;
   }
 
 }
