@@ -1,5 +1,5 @@
 <form
-  (ngSubmit)="register(registerForm)"
+  (ngSubmit)="register()"
   #registerForm="ngForm"
   autocomplete="off"
 >
@@ -14,9 +14,6 @@
       placeholder="Username"
     />
   </div>
-  <select class="form-control">
-    <option *ngFor="let user of usersFromHomeComponent" value="{{user.userName}}" ></option>
-  </select>
   <div class="form-group">
     <input
       type="text"
