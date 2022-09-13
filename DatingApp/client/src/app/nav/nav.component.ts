@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'app/models/user';
 import { AccountService } from 'app/services/account.service';
 import { Observable } from 'rxjs';
@@ -11,11 +12,13 @@ import { Observable } from 'rxjs';
 export class NavComponent implements OnInit {
   loggedIn: boolean = false;
   // using 2 way binding (update the view <=>component)
-  
+
   model: any = {};
-currentUser$?: Observable<User>;
-  constructor(private accountService: AccountService) { 
-    this.currentUser$=this.accountService.currentUser$;
+  currentUser$?: Observable<User>;
+  constructor(private accountService: AccountService,
+    private router: Router
+  ) {
+    this.currentUser$ = this.accountService.currentUser$;
   }
 
   ngOnInit(): void {
@@ -24,6 +27,7 @@ currentUser$?: Observable<User>;
     this.accountService.login(this.model)
       .subscribe({
         next: response => {
+          this.router.navigateByUrl('members');
           console.log(response);
           // this.loggedIn = true;
         },
@@ -34,17 +38,7 @@ currentUser$?: Observable<User>;
   }
   logout() {
     this.accountService.logout();
+    this.router.navigateByUrl('/');
     // this.loggedIn = false;
   }
-  //get the current user
-  // getCurrentUser() {
-  //   this.accountService.currentUser$.subscribe({
-  //     next: user => {
-  //       this.loggedIn = !!user;
-  //     },
-  //     error: error => {
-  //       console.log(error);
-  //     }
-  //   });
-  // }
 }
