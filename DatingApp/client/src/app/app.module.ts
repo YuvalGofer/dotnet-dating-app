@@ -14,6 +14,7 @@ import { MembersListComponent } from './members/members-list/members-list.compon
 import { MembersDetailComponent } from './members/members-detail/members-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -33,7 +34,10 @@ import { ListsComponent } from './lists/lists.component';
     HttpClientModule,
     BrowserAnimationsModule, // add the module that contains the service we need!
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass:'toast-button-right'
+    }), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
