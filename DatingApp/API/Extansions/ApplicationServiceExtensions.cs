@@ -11,7 +11,7 @@ namespace API.Extansions
     {
         private static IServiceCollection services;
 
-        public static IServiceCollection AddApplicationServices(this IServiceCollection service, IConfiguration config)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
             services.AddScoped<ITokenService, TokenService>();
 
