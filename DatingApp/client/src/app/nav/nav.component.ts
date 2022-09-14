@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'app/models/user';
 import { AccountService } from 'app/services/account.service';
+import { error } from 'console';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 
@@ -33,12 +34,20 @@ export class NavComponent implements OnInit {
           console.log(response);
           // this.loggedIn = true;
         },
-        error: error => {
-          this.toastr.error(error.error);
+        error: ({ error }) => {
+          if (!(error.errors && typeof error.errors === 'object')) {
+            return this.toastr.error(error) as any;
+          }
+          for (const key in error.errors) {
+            if (error.errors.hasOwnProperty(key)) {
+              this.toastr.error(error.errors[key])
+            }
+          }
           console.log(error);
         }
       });
   }
+
   logout() {
     this.accountService.logout();
     this.router.navigateByUrl('/');
