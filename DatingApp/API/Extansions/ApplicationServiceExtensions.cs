@@ -9,8 +9,6 @@ namespace API.Extansions
 {
     public static class ApplicationServiceExtensions
     {
-        private static IServiceCollection services;
-
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
             services.AddScoped<ITokenService, TokenService>();
