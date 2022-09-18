@@ -19,7 +19,7 @@ namespace API.Extansions
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(config["TokenKey"])),
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(config["TokenKey"])),
         ValidateIssuer = false,
         ValidateAudience = false
     };

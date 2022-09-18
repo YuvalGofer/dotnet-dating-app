@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
 {
-    [Route("[controller]")]
     public class BuggyController : BaseApiController
     {
         private readonly DataContext _context;
