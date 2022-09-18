@@ -1,8 +1,8 @@
-applying a bootstrap theme:
-1. go to bootswatch.com and pick a theme
-2. install `bootswatch` (https://www.npmjs.com/package/bootswatch)
-3. in angular.json apply the stylesheets AFTER bootstrap's, go to angular.json 
-4. restart the angular app
+73. Section 6 summary
 
-* lets make the top navbar a bit brighter and also display the username, go to nav.component.html
- next up: exporting to a shared module so the app module will be thinner
+1. router basics
+2. added bootstrap theme
+3. route guards (not a security, security is on the BE, FE have all the code)
+4. feature + shared modules (can talk about core module - things that are used in all the app) 
+
+next module: error handling on the FE + BE
