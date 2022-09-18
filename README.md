@@ -1,13 +1,15 @@
-74. Introduction
-    
-error handling on the FE and the BE:
+building global exception handling middleware:
 
-learning goals:
+the goal of this middleware is to catch all exceptions and return a response in standard way.
+create an `Errors` folder and ApiException.cs file in it.
+go to ApiException.cs;
 
-1. API Middleware - understanding
-2. angular interceptors - intercept requests and responses
-3. troubleshooting exceptions
 
-the goal of this module is to create an Error Handling utopia: setting things up once in a centralized way and not waring about it ever again 
+create an `Middleware` folder and ExceptionMiddleware.cs file in it.
+this will be our middleware class.
+lets see how we build a middleware in .net core.
+do to ExceptionMiddleware.cs
+
+use the middleware in Startup.cs, go to Startup.cs
 
 
