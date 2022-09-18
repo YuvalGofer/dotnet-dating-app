@@ -29,7 +29,6 @@ import { BrowserModule } from '@angular/platform-browser';
     HttpClientModule,
     BrowserAnimationsModule, // add the module that contains the service we need!
     FormsModule,
-   
     MembersModule,
     CoreModule, // ToastrModule added
   ],
