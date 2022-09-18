@@ -12,6 +12,7 @@ import { MembersModule } from './modules/members.module';
 import { CoreModule } from './modules/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { BrowserModule } from '@angular/platform-browser';
     HomeComponent,
     RegisterComponent,
     MessagesComponent, 
-    ListsComponent
+    ListsComponent, TestErrorsComponent
   ],
   imports: [
     BrowserModule,
