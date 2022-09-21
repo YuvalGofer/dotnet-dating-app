@@ -24,8 +24,9 @@ const routes: Routes = [
       { path: 'lists', component: ListsComponent },
       { path: 'messages', component: MessagesComponent }
     ]
-  }, {
-    path: 'error',
+  },
+  {
+    path: 'errors',
     component: TestErrorsComponent,
   },
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
     pathMatch: 'full'
   }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

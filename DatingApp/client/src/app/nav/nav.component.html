@@ -5,8 +5,7 @@
     <ul class="navbar-nav mr-auto">
       <ng-container *ngIf="currentUser$ | async">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/members">Matches</a
-          >
+          <a class="nav-link" routerLinkActive="active" routerLink="/members">Matches</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/lists">Lists</a
@@ -17,14 +16,12 @@
         </li>
       </ng-container>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/messages">Errors</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/errors">Errors</a>
       </li>
     </ul>
 
     <div class="dropdown" *ngIf="currentUser$ | async as user" dropdown>
-      <a class="text-light dropdown-toggle" dropdownToggle>
-        {{ user.username | titlecase }}</a
-      >
+      <a class="text-light dropdown-toggle" dropdownToggle>{{ user.username | titlecase }}</a>
       <div class="dropdown-menu mt-3" *bsDropdownMenu>
         <a class="dropdown-item">Edit Profile</a>
         <li class="divider"></li>
@@ -33,29 +30,16 @@
     </div>
 
     <form
-      *ngIf="!(currentUser$ | async)"
-      class="form-inline mt-2 mt-md-0"
-      #loginForm="ngForm"
-      (ngSubmit)="login()"
-      autocomplete="off"
-    >
+      *ngIf="!(currentUser$ | async)"class="form-inline mt-2 mt-md-0"#loginForm="ngForm"(ngSubmit)="login()"
+      autocomplete="off">
+      <input name="username-one" [(ngModel)]="model.username" class="form-control mr-sm-2" type="text"
+        placeholder="Username"/>
       <input
-        name="username-one"
-        [(ngModel)]="model.username"
-        class="form-control mr-sm-2"
-        type="text"
-        placeholder="Username"
-      />
-      <input
-        name="password-one"
-        [(ngModel)]="model.password"
-        class="form-control mr-sm-2"
-        type="password"
-        placeholder="Password"
-      />
+        name="password-one" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password"
+        placeholder="Password"/>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
     </form>
   </div>
-  <p>{{ model.username }}</p>
+  <!-- <p>{{ model.username }}</p> -->
   <!--  </div> -->
 </nav>

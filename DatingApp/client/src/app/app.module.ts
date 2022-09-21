@@ -1,6 +1,6 @@
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +13,8 @@ import { CoreModule } from './modules/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
+
 
 
 @NgModule({
@@ -33,7 +35,13 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
     MembersModule,
     CoreModule, // ToastrModule added
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:ErrorInterceptor,
+      multi:true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
