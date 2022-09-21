@@ -1,3 +1,6 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -6,16 +9,14 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
-import { MembersModule } from './modules/members.module';
+import { MessagesComponent } from './messages/messages.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { CoreModule } from './modules/core.module';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
-import { TestErrorsComponent } from './errors/test-errors/test-errors.component.';
-
-
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,19 +24,19 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component.
     NavComponent,
     HomeComponent,
     RegisterComponent,
-    MessagesComponent,
     ListsComponent,
-    TestErrorsComponent
-
+    MessagesComponent,
+    TestErrorsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule, // add the module that contains the service we need!
+    BrowserAnimationsModule,
     FormsModule,
-    MembersModule,
-    CoreModule, // ToastrModule added
+    CoreModule
+
   ],
   providers: [
     {
