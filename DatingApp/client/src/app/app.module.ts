@@ -12,8 +12,8 @@ import { MembersModule } from './modules/members.module';
 import { CoreModule } from './modules/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component.';
 
 
 
@@ -23,8 +23,10 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     NavComponent,
     HomeComponent,
     RegisterComponent,
-    MessagesComponent, 
-    ListsComponent, TestErrorsComponent
+    MessagesComponent,
+    ListsComponent,
+    TestErrorsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -38,10 +40,10 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass:ErrorInterceptor,
-      multi:true
-  }
-],
+      useClass: ErrorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
