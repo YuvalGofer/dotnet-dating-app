@@ -10,7 +10,7 @@ namespace API.Helpers
 { 
     public class AutoMapperProfiles : Profile
     {
-        AutoMapperProfiles(){
+        public AutoMapperProfiles(){
             CreateMap<AppUser, MemberDto>();
             CreateMap<Photo, PhotoDto>();
         }
