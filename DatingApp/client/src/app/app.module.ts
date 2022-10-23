@@ -19,6 +19,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { SharedModule } from './modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    CoreModule
+    CoreModule,
+    SharedModule
 
   ],
   providers: [
