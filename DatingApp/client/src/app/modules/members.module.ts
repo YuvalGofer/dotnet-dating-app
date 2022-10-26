@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MemberListComponent } from 'app/members/member-list/member-list.component';
-import { MemberDetailComponent } from 'app/members/member-detail/member-detail.component';
+import { MemberListComponent } from '../members/member-list/member-list.component';
+import { MemberDetailComponent } from '../members/member-detail/member-detail.component';
 import { RouterModule, Routes } from '@angular/router';
-import { MemberCardComponent } from 'app/members/member-card/member-card.component';
+import { MemberCardComponent } from '../members/member-card/member-card.component';
 import { SharedModule } from './shared.module';
 
 const routes: Routes = [

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -21,6 +22,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { SharedModule } from './modules/shared.module';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+
 
 
 @NgModule({
@@ -54,12 +56,12 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
+      useClass: JwtInterceptor,
       multi: true
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: JwtInterceptor,
+      useClass: LoadingInterceptor,
       multi: true
     }
   ],
