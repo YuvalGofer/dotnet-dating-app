@@ -12,15 +12,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModule,
     TabsModule.forRoot(),
     NgxGalleryModule,
-    BsDropdownModule,
-    ToastrModule,
-    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    }),
     NgxSpinnerModule
   ],
   declarations: [],
   exports: [
-    TabsModule,
-    NgxGalleryModule,
+    BsDropdownModule,
+    ToastrModule,
     TabsModule,
     NgxGalleryModule,
     NgxSpinnerModule
