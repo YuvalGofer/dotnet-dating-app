@@ -20,6 +20,8 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { SharedModule } from './modules/shared.module';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -51,9 +53,9 @@ import { SharedModule } from './modules/shared.module';
       multi: true
     },
     {
-provide:HTTP_INTERCEPTORS,
-useClass:LoadingInterceptor,
-multi:true
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true
     },
     {
       provide: HTTP_INTERCEPTORS,
