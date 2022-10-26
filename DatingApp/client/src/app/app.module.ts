@@ -51,6 +51,11 @@ import { SharedModule } from './modules/shared.module';
       multi: true
     },
     {
+provide:HTTP_INTERCEPTORS,
+useClass:LoadingInterceptor,
+multi:true
+    },
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true
