@@ -28,7 +28,7 @@ namespace API.Controllers
             _userRepository = userRepository;
             _mapper = mapper;
         }
-        
+
         [HttpGet] // api/users
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
         {
@@ -36,7 +36,7 @@ namespace API.Controllers
             return Ok(users);
         }
 
-        [HttpGet("{username}")] // api/users/1
+        [HttpGet("{username}", Name = "GetUser")] // api/users/1
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
             var rtn = await _userRepository.GetMemberAsync(username);
@@ -47,7 +47,7 @@ namespace API.Controllers
         [HttpPut] // api/users PUT
         public async Task<ActionResult> UpdateUser(MemberUpdateDTO memberUpdateDTO)
         {
-           var username = User.GetUsername();
+            var username = User.GetUsername();
             var user = await _userRepository.GetUserByUserNameAsync(username);
 
             _mapper.Map(memberUpdateDTO, user);
@@ -58,7 +58,7 @@ namespace API.Controllers
 
             return BadRequest("Failed to update user");
         }
-            [HttpPost("add-photo")] // api/users/add-photo
+        [HttpPost("add-photo")] // api/users/add-photo
         public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file)
         {
             var username = User.GetUsername();
@@ -82,7 +82,7 @@ namespace API.Controllers
 
             if (await _userRepository.SaveAllAsync())
             {
-                 return _mapper.Map<PhotoDto>(photo);
+                return CreatedAtRoute("GetUser", new { username = user.UserName }, _mapper.Map<PhotoDto>(photo));
             }
             return BadRequest("Problem adding photo");
 
