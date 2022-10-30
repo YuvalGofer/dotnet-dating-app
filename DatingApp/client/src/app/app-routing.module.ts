@@ -9,7 +9,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
-import(PreventUnsavedChangesGuard )from './guards/prevent-unsaved-changes.guard';
+import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
+
 
 const routes: Routes = [
   {
