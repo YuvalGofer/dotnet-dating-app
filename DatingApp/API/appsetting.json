@@ -1,0 +1,13 @@
+{
+    "Logging":{
+        "Default":"Information",
+        "Microsoft":"Warning",
+        "Microsoft.Hosting.Lifetime":"Information"
+    },
+    "AllowedHosts":"*",
+    "CloudinarySetting":{
+        "CloudName":"dgv1cp7g0",
+        "ApiKey":"356557791712946",
+        "ApiSecret":"zrsVnGm901KVs6noLHr7pZnQKcM"
+    }
+}
