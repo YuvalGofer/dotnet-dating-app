@@ -19,10 +19,10 @@ export class BusyService {
     this.spinnerService.show(undefined, spinner)
   }
   idle() {
-    this.busyRequestCount = Math.max(0, this.busyRequestCount - 1);
     this.busyRequestCount--;
-    if(this.busyRequestCount<0){
-      this.busyRequestCount=0
+    if (this.busyRequestCount <= 0) {
+      this.busyRequestCount = 0;
+      this.spinnerService.hide();
     }
   }
 }
